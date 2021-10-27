@@ -6,24 +6,24 @@ const cors = require('cors')
 const app = express();
 
 //concectamos a la base de datos
-conectDB()
+conectDB();
 
 //habilitar cors
-app.use(cors())
+app.use(cors());
 
 //habilitar express.json
-app.use(express.json({extended: true}))
+app.use(express.json({extended: true}));
 
 //puerto de la app
 const port = process.env.port || 4000;
 
 //importa rutas
-app.use('/api/usuario', require('./routes/usuario'))
-app.use('/api/auth', require('./routes/auth'))
-app.use('/api/proyectos', require('./routes/proyectos'))
-app.use('/api/tareas', require('./routes/tareas'))
+app.use('/api/usuario', require('./routes/usuario'));
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/proyectos', require('./routes/proyectos'));
+app.use('/api/tareas', require('./routes/tareas'));
 
 //arancar la app
 app.listen(port,'0.0.0.0', ()=>{
     console.log(`El servidor esta funcionando en el puerto ${port}`)
-})
+});
