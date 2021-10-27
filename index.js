@@ -1,6 +1,5 @@
 const express = require('express');
 const conectDB = require('./config/db');
-const cors = require('cors')
 
 //crerar server
 const app = express();
@@ -8,14 +7,6 @@ const app = express();
 //concectamos a la base de datos
 conectDB();
 
-//habilitar cors
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
-}
-
-app.use(cors(corsOptions)) // Use this after the variable declaration
 
 //habilitar express.json
 app.use(express.json({extended: true}));
